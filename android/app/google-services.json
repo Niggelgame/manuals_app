@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1052480759470",
+    "project_id": "manuals-bd6aa",
+    "storage_bucket": "manuals-bd6aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052480759470:android:d197353f856135fc2e2f3f",
+        "android_client_info": {
+          "package_name": "de.kedil.manuals"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052480759470-kv282380i4h3nek4a7u2mmh29b832vs0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY1gnANNoXmb_IBBmKtBU6UUG3qAStM04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052480759470-kv282380i4h3nek4a7u2mmh29b832vs0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
