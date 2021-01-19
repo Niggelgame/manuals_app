@@ -1,9 +1,15 @@
+import 'package:equatable/equatable.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manuals/app.dart';
 import 'package:manuals/theming/custom_theme.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  EquatableConfig.stringify = kDebugMode;
   runApp(MyApp());
 }
 
@@ -47,8 +53,6 @@ class _MyHomePageState extends State<MyHomePage> {
     _initializedApp();
     super.initState();
   }
-
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
