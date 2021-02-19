@@ -1,8 +1,10 @@
 library api_wrapper;
 
 
-
 class ApiWrapper {
-  final AuthRepository
+  const ApiWrapper._();
+
+  static final instance = ApiWrapper._();
+
 
 }
