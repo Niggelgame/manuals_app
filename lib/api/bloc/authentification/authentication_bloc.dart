@@ -1,10 +1,11 @@
 import 'dart:async';
 
+import 'package:api_wrapper/api_wrapper.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:manuals/auth/auth_repository.dart';
+import 'package:manuals/api/auth_repository.dart';
 
 part 'authentication_events.dart';
 part 'authentication_state.dart';
@@ -30,7 +31,7 @@ class AuthenticationBloc
       AuthenticationEvent event,
       ) async* {
     if (event is AuthenticationUserChanged) {
-      yield _mapAuthenticationUserChangedToState(event);
+      yield await _mapAuthenticationUserChangedToState(event);
     } else if (event is AuthenticationRequestLogin) {
       try {
         await _authenticationRepository.login();
@@ -46,9 +47,12 @@ class AuthenticationBloc
     return super.close();
   }
 
-  AuthenticationState _mapAuthenticationUserChangedToState(
+  Future<AuthenticationState> _mapAuthenticationUserChangedToState(
       AuthenticationUserChanged event,
-      ) {
+      ) async {
+    if(event.user != null) {
+      ApiWrapper.instance.updateToken(await event.user.getIdToken());
+    }
     return event.user != null
         ? AuthenticationState.authenticated(event.user)
         : const AuthenticationState.unauthenticated();

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:manuals/auth/auth_repository.dart';
-import 'package:manuals/auth/bloc/authentication_bloc.dart';
+import 'package:manuals/api/auth_repository.dart';
 import 'package:manuals/screens/screens.dart';
 
-class App extends StatelessWidget {
-  final AuthRepository authRepository = AuthRepository();
+import 'api/bloc/authentification/authentication_bloc.dart';
 
+class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider<AuthenticationBloc>(
       create: (context) {
-        return AuthenticationBloc(authenticationRepository: authRepository)
+        return AuthenticationBloc(authenticationRepository: context.read<AuthRepository>())
           ..add(AuthenticationRequestLogin());
       },
       child: BlocBuilder<AuthenticationBloc, AuthenticationState>(

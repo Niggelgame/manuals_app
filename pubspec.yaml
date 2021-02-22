@@ -36,6 +36,11 @@ dependencies:
   flutter_bloc: ^6.1.1
   bloc: ^6.1.1
 
+  logger: ^0.9.4
+
+  api_wrapper:
+    path: api_wrapper
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

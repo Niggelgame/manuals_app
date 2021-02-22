@@ -1,4 +1,4 @@
-part of 'package:manuals/auth/bloc/authentication_bloc.dart';
+part of 'authentication_bloc.dart';
 
 enum AuthenticationStatus { authenticated, unauthenticated, unknown }
 

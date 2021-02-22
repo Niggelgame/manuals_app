@@ -2,9 +2,9 @@ import 'package:equatable/equatable.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:manuals/app.dart';
 import 'package:manuals/theming/custom_theme.dart';
+import 'package:manuals/widgets/widgets.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -70,6 +70,6 @@ class _MyHomePageState extends State<MyHomePage> {
       return CircularProgressIndicator();
     }
 
-    return App();
+    return CustomRepositoryProvider(child: App());
   }
 }

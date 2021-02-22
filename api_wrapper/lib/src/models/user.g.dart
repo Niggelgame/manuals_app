@@ -21,8 +21,8 @@ Map<String, dynamic> _$FullUserToJson(FullUser instance) => <String, dynamic>{
       'ownManuals': instance.ownManuals,
     };
 
-CompactUser _$CompactUserFromJson(Map<String, dynamic> json) {
-  return CompactUser(
+PartialUser _$CompactUserFromJson(Map<String, dynamic> json) {
+  return PartialUser(
     json['_id'] as String,
     (json['ownManuals'] as List)
         ?.map((e) => e == null
@@ -32,7 +32,7 @@ CompactUser _$CompactUserFromJson(Map<String, dynamic> json) {
   );
 }
 
-Map<String, dynamic> _$CompactUserToJson(CompactUser instance) =>
+Map<String, dynamic> _$CompactUserToJson(PartialUser instance) =>
     <String, dynamic>{
       '_id': instance.firebaseUserId,
       'ownManuals': instance.ownManuals,
