@@ -26,12 +26,5 @@ class CustomRepositoryProvider extends StatelessWidget {
       ],
       child: child,
     );
-
-    return RepositoryProvider<AuthRepository>(
-      create: (context) {
-        return AuthRepository();
-      },
-      child: child,
-    );
   }
 }

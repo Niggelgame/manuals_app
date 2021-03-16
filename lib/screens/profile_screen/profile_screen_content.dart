@@ -21,6 +21,7 @@ class _ProfileScreenContentState extends State<ProfileScreenContent> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(widget.user.firebaseUserId),
+          Text(widget.user.ownManuals.toString()),
         ],
       ),
     );

@@ -17,7 +17,7 @@ class ProfileScreen extends StatelessWidget {
       child: BlocListener<ProfileBloc, ProfileState>(
         listener: (context, state) {
           if (state is ProfileLoadingFailed) {
-            Scaffold.of(context).showSnackBar(
+            ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(
                 content: Text(state.error),
                 backgroundColor: Colors.red,
